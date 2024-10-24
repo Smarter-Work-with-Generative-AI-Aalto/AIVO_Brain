@@ -1,0 +1,44 @@
+{
+  "name": "aivo_brain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "build": "tsc",
+    "dev": "nodemon --signal SIGTERM src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/bull": "^4.10.4",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.7.4",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "prisma": "^5.20.0",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@bull-board/api": "^6.0.0",
+    "@bull-board/express": "^6.0.0",
+    "@langchain/openai": "^0.3.5",
+    "@prisma/client": "^5.20.0",
+    "@types/socket.io": "^3.0.2",
+    "bull": "^4.16.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "langchain": "^0.3.2",
+    "socket.io": "^4.8.0",
+    "uuid": "^10.0.0",
+    "winston": "^3.14.2"
+  }
+}

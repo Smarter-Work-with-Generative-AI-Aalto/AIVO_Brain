@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AZURE_AAI_API_KEY=${AZURE_AAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GOOGLE_GEMINI_API_KEY=${GOOGLE_GEMINI_API_KEY}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+      - LLAMA_API_KEY=${LLAMA_API_KEY}
+      - GROK_API_KEY=${GROK_API_KEY}
+      - AZURE_AISEARCH_ENDPOINT=${AZURE_AISEARCH_ENDPOINT}
+      - AZURE_AISEARCH_KEY=${AZURE_AISEARCH_KEY}
+      - PORT=${PORT}
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: aivobraindbadmin
+      POSTGRES_DB: aivobraindb
+    ports:
+      - '5433:5432'  # Host:Container
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data  # Optional: Persist Redis data
+
+volumes:
+  db-data:
+  redis-data:

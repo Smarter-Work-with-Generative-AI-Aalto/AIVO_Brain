@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Test files
+api_tests.http
+*.http
+
+# Coverage directory
+coverage/
+.coverage
+coverage.json
+
+# IDE files (optional but recommended)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System Files
+.DS_Store
+Thumbs.db
